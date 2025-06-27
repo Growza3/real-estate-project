@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Property</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-image: url('build5.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 1500px;
+            width: 100%;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            height: 100px;
+            background-color: #493628;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header img {
+    height: 150px;
+    margin:0;
+    padding: 0;
+}
+
+.d-flex a{
+  color: white;
+  text-decoration: none;
+  margin-inline: 10px;
+  font-size: 26px;
+}
+.d-flex a:first-child{
+  margin-left: 400px;
+}
+        .btn-nav {
+            background-color: #493628;
+            color: white;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px 30px;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+        }
+        .btn-nav:hover {
+            background-color: burlywood;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+        .footer {
+  background: #493628; /* Gradient background */
+  padding: 40px 70px;
+  color: #fff;
+  position: relative; /* Allows for positioning of pseudo-elements */
+  overflow: hidden; /* To ensure no overflow from pseudo-elements */
+}
+
+.footer h5 {
+  font-size: 24px; /* Increased font size */
+  margin-bottom: 20px;
+  font-weight: bold; /* Bold headings */
+  border-bottom: 2px solid #ffa500; /* Underline for headings */
+  padding-bottom: 10px; /* Space between heading and text */
+  color:white;
+}
+
+.footer p {
+  font-size: 16px; /* Slightly smaller font size */
+  line-height: 1.5;
+  color: white;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: #ffa500; /* Change to gold on hover */
+}
+
+.footer .d-flex a {
+  font-size: 28px; /* Increased font size for social icons */
+  color: #fff;
+  margin-right: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .d-flex a:hover {
+  color: #ffa500; /* Change color on hover */
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+.footer .text-center p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Bottom border for a subtle separation */
+.bottom-footer {
+  border-top: 2px solid #ffa500; /* Light border for separation */
+  padding-top: 20px;
+  
+}
+label{
+    font-size: 24px;
+}
+input[text]{
+    font-size: 24px;
+}
+    </style>
+</head>
+
+<body>
+    <header >
+        <div class="d-flex align-items-center justify-content-between p-3">
+          <img data-aos="zoom-in" src="Empire6.png" alt="logo" height="150" width="150"/>
+          <div data-aos="fade-up"> 
+            <a href="Home.php">Home</a> 
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+          </div>
+          <div data-aos="fade-up">
+            <a href="seller_profile.php">My Profile</a>
+            <a href="logout.php">Logout</a>
+          </div>
+        </div>
+      </header>
+    <div class="container mt-5">
+        <center><h1>Add Property</h1></center>
+        <form action="add_property.php" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="form_token" value="<?php echo $_SESSION['form_token']; ?>">
+      
+            <div class="mb-3">
+                <label for="title" class="form-label">Title <i class="fas fa-home"></i></label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter property title" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description <i class="fas fa-align-left"></i></label>
+                <textarea class="form-control" id="description" name="description" rows="4" placeholder="Enter property description" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location <i class="fas fa-map-marker-alt"></i></label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter property location" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price <i class="fas fa-dollar-sign"></i></label>
+                <input type="text" class="form-control" id="price" name="price" placeholder="Enter property price" required>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Property Type <i class="fas fa-tags"></i></label>
+                <input type="text" class="form-control" id="type" name="type" placeholder="Enter property type" required>
+            </div>
+            <div class="mb-3">
+                <label for="size" class="form-label">Size (sqft) <i class="fas fa-arrows-alt"></i></label>
+                <input type="text" class="form-control" id="size" name="size" placeholder="Enter property size" required>
+            </div>
+            <div class="mb-3">
+                <label for="bedrooms" class="form-label">Number of Bedrooms <i class="fas fa-bed"></i></label>
+                <input type="number" class="form-control" id="bedrooms" name="bedrooms" placeholder="Enter number of bedrooms" required>
+            </div>
+            <div class="mb-3">
+                <label for="bathrooms" class="form-label">Number of Bathrooms <i class="fas fa-bath"></i></label>
+                <input type="number" class="form-control" id="bathrooms" name="bathrooms" placeholder="Enter number of bathrooms" required>
+            </div>
+            <div class="mb-3">
+                <label for="parking" class="form-label">Parking Availability <i class="fas fa-car"></i></label>
+                <input type="text" class="form-control" id="parking" name="parking" placeholder="Enter parking availability" required>
+            </div>
+            <div class="mb-3">
+                <label for="furnishing_status" class="form-label">Furnishing Status <i class="fas fa-couch"></i></label>
+                <input type="text" class="form-control" id="furnishing_status" name="furnishing_status" placeholder="Enter furnishing status" required>
+            </div>
+            <div class="mb-3">
+                <label for="amenities" class="form-label">Amenities <i class="fas fa-concierge-bell"></i></label>
+                <input type="text" class="form-control" id="amenities" name="amenities" placeholder="Enter amenities available" required>
+            </div>
+            <div class="mb-3">
+                <label for="nearby_landmarks" class="form-label">Nearby Landmarks <i class="fas fa-map-signs"></i></label>
+                <input type="text" class="form-control" id="nearby_landmarks" name="nearby_landmarks" placeholder="Enter nearby landmarks" required>
+            </div>
+            <div class="mb-3">
+                <label for="property_images" class="form-label">Property Images <i class="fas fa-images"></i></label>
+                <p>You Can Choose Multiple Images To Upload</p>
+                <input type="file" class="form-control" id="property_images" name="images[]" multiple required>
+            </div>
+            <button type="submit" class="btn-nav">Add Property</button>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="more">
+          <div class="row">
+            <!-- Contact Info -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <p>
+                Regel Realty<br>
+                123 Main St, Mumbai, India<br>
+                Email: info@regelrealty.com<br>
+                Phone: +91-985472156
+              </p>
+            </div>
+            
+            <!-- Property Insights -->
+            <div class="col-md-4">
+              <h5>Property Insights</h5>
+              <p>"Did you know? Investing in real estate has consistently outperformed stocks over the last 50 years!"</p>
+              <p>Tip: "Always consider the neighborhood’s potential growth when buying a property."</p>
+              <p>Fact: "In most countries, properties appreciate around 3-5% annually."</p>
+            </div>
+      
+            <!-- Social Media -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <a href="#" class="text-light me-3">
+                <i class="fa fa-facebook"></i>
+              </a>
+              <a href="#" class="text-light me-3">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#" class="text-light me-3">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="#" class="text-light">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+      
+          <!-- Bottom Footer -->
+          <div class="bottom-footer text-center mt-4">
+            <p>© 2024 Empire Properties. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+      
+</body>
+
+</html>

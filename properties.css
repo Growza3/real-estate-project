@@ -1,0 +1,170 @@
+/* General Page Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+/* Header Styling */
+header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 80px;
+}
+
+header img {
+  height: 150px;
+  width: 150px;
+}
+
+
+.header-right .navlinks {
+  background-color: #ffa500;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.header-right .navlinks:hover {
+  background-color: #ff7700;
+  color: #fff;
+}
+
+/* Properties Section Styling */
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card__article {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card__article:hover {
+  transform: scale(1.05);
+}
+
+.card__img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.card__data {
+  padding: 15px;
+}
+
+.card__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card__description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.card__price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card__button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.card__button:hover {
+  background-color: #ffa500;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #333;
+  padding: 40px 0;
+  color: #fff;
+}
+
+.footer h5 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: #ffa500;
+}
+
+.footer .d-flex a {
+  font-size: 24px;
+  color: #fff;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer .d-flex a:hover {
+  color: #ffa500;
+}
+
+.footer .text-center p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .header-right .navlinks {
+      margin-top: 15px;
+  }
+
+  .card__container {
+      grid-template-columns: 1fr;
+  }
+}
